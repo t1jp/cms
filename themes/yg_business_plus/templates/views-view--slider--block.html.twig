@@ -1,0 +1,51 @@
+<!-- BANNER SLIDER SECTION -->
+<style type="text/css">
+{% for result in view.result %}
+  {% if ( loop.index )  %}
+    #banner-slider .carousel-item {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 750px;
+    }
+    .item-{{ loop.index-1 }} {
+      background-image: url('{{ file_url(view.field.uri.value(view.result[loop.index-1])) }}');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 750px;
+    }
+  {% endif %}
+{% endfor %}
+</style>
+<section id="banner-slider">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        {% for result in view.result %}
+          <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index-1 }}" class="{% if ( loop.index == 1 )  %}active{% endif %}"></li>
+        {% endfor %}
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        {% for result in view.result %}
+          <div class="carousel-item item-{{ loop.index-1 }} {% if ( loop.index == 1 )  %}active{% endif %}">
+            <div class="carousel-caption d-none d-md-block mx-auto wow fadeInDown">
+              <h1><span>{{ view.field.title.value(view.result[loop.index-1]) }}</span></h1>
+              <p>{{ view.field.body.value(view.result[loop.index-1]) |striptags }}</br></p> 
+              <a href="{{ view.field.field_button_link.value(view.result[loop.index-1]) |striptags }}" class="btn btn-infos">{{ view.field.field_button_text.value(view.result[loop.index-1]) |striptags }}</a>
+            </div>
+          </div>          
+          {% endfor %}
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+      </div>
+  </div>
+</div>
+</section>
+

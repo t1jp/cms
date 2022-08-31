@@ -1,0 +1,13 @@
+<div class="col-md-4 col-sm-4 col-xs-12 recent-blog wow fadeInUp">
+  <div class="blog-listing">
+      <a href="{{ fields.view_node.content}}"><img src="{{ fields.field_image.content}}" alt="blog-img" class="img-responsive"></a>
+      <p class="blog-date">{{ fields.created.content}}</p>
+    <div class="blog-body">
+      <a href="{{ fields.view_node.content}}"><h6>{{ fields.title.content}}</h6></a>
+      <p>{{ fields.body.content}}</p>
+      <span><i class="fa fa-comment-o" aria-hidden="true"></i></span>
+      <span class="no-of-comments">{{ fields.comment_count.content}}</span>
+      <a href="{{ fields.view_node.content}}"><span>Read More</span></a>
+    </div>
+  </div>
+</div>

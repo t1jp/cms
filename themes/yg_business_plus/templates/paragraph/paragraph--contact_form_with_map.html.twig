@@ -1,0 +1,35 @@
+ <section id="get-in-touch">
+  <div class="container">
+    <div class="contact-details">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="map wow fadeInUp" data-wow-delay="0.9s">
+            <iframe src="{{ content.field_map_iframe.0 }}" width="600" height="580" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>  
+        <div class="col-md-6 col-sm-12 contact-info wow fadeInLeft">
+          <div class="info-list">
+            <i class="fa fa-map-marker"></i>
+            <p>{{ content.field_address.0 }}</p>
+          </div>
+          <div class="info-list">
+            <i class="fa fa-phone"></i>
+            <p>{{ content.field_phone_number.0 }}</p>
+          </div>
+          <div class="info-list">
+            <i class="fa fa-envelope"></i>
+            <p>{{ content.field_e_mail.0 }}</p>
+          </div>
+          <div class="info-list">
+            <i class="fa fa-clock-o"></i>
+            <p>{{ content.field_office_time.0 }}</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 contact-form wow fadeInRight">
+          {{ content.field_contact_form.0 }} 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Map section -->

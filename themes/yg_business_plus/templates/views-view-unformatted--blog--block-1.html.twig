@@ -1,0 +1,10 @@
+<section id="latest-blogs">
+  <div class="container">
+      <h2 class="text-center wow fadeInDown" data-wow-delay="0.1s">Latest Blog</h2>
+    <div class="row">
+      {% for row in rows %}
+		    {{ row.content }}
+		  {% endfor %}                            
+    </div>
+  </div>
+</section>
